@@ -3,9 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>routes</title>
+    <title>public</title>
 </head>
 <body>
+    <div>
+
+        <h1> iam public</h1>
+        <a href="../static/apple pro.jpg">again</a>
+        <a href="../static/baby.jpg"> i am baby</a>
+        <a href="../static/child.jpg">i am child</a>
+        <!-- <a href="/routes/static/apple pro.jpg">apple</a> wrong method to set a image   -->
+        <a href="/routes/static/baby.jpg">baby</a>
+        <a href="/routes/static/child.jpg">child</a>
+    </div>
+<br>
+
+ <h3>simple signup form</h3>
+    <div>
+        <input type="text" name="" id="fname" placeholder="first name">
+        <input type="text" id="lname" placeholder=" last name">
+        <img src="" alt="" width="60px">
+        <input type="email" name="" id="email" placeholder="email">
+        <input type="password" name="" id="pword" placeholder="password">
+        <button type="submit" id="btn">submit</button>
+    </div>
+
+    <script>
+
+
+        document.getElementById("btn").addEventListener("click",async()=>{
+            let fname =document.getElementById("fname").value;
+            let lname =document.getElementById("lname").value;
+            let email =document.getElementById("email").value;
+            let password =document.getElementById("pword").value;
+
+            let axioResponse = await axios.post('/form',{
+                fname:fname,
+                lname:lname,
+                email:email,
+                password:password
+
+            })
+
+            console.log(axioResponse.data,"<------- response data")
+
+        })
+
+   
+
+
+
+
+
+    </script>
+
     
-</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+    </body>
 </html>
